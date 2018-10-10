@@ -8,9 +8,9 @@ Well, most of parts in this projects are more of HTML than c# anyway.
 This project use jquery for html elements selector and ajax requests
 
 # Setup:
-dotnet restore
-dotnet build
-dotnet run
+dotnet restore  
+dotnet build  
+dotnet run  
 Then you're ready to go. Just open http://localhost:5000
 
 # Deploy:
