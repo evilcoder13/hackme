@@ -1,0 +1,29 @@
+@{
+    ViewData["TieuDe"] = "HELLO WORLD!";
+}
+<div>
+    <div>Tìm password trên trang và nhập vào ô bên dưới!</div>
+    <form action="/Home/Index/2">
+        <input type="password" placeholder="Nhập password!" id='txtpassword' />
+        <br />
+        <input type="submit" value="Login" onclick="return Login();" />
+    </form>
+</div>
+@section scripts {
+    <script>
+        console.log('password:0123456');
+        function Login() {
+            if($('#txtpassword').val()=='0123456')
+            {
+                alert('Đăng nhập thành công!');
+                return true;
+            }
+            else
+            {
+                alert('Sai mật khẩu!');
+                return false;
+            }
+        }
+    </script>
+
+}

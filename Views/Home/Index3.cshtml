@@ -1,0 +1,31 @@
+@{
+    ViewData["TieuDe"] = "HELLO WORLD!";
+}
+<div>
+    <div>Tìm password này thay đổi hàng giờ!</div>
+    <form action="/Home/Index/4">
+        <input type="password" placeholder="Nhập password!" id='txtpassword' />
+        <br />
+        <input type="submit" value="Login" onclick="return Login();" />
+    </form>
+</div>
+@section scripts {
+    <script>
+        password = (new Date()).getHours();
+        listpass = ['cGFzc3dvcmQgQCAw','cGFzc3dvcmQgQCAx','cGFzc3dvcmQgQCAy','cGFzc3dvcmQgQCAz','cGFzc3dvcmQgQCA0','cGFzc3dvcmQgQCA1','cGFzc3dvcmQgQCA2','cGFzc3dvcmQgQCA3','cGFzc3dvcmQgQCA4','cGFzc3dvcmQgQCA5','cGFzc3dvcmQgQCAxMA==','cGFzc3dvcmQgQCAxMQ==','cGFzc3dvcmQgQCAxMg==','cGFzc3dvcmQgQCAxMw==','cGFzc3dvcmQgQCAxNA==','cGFzc3dvcmQgQCAxNQ==','cGFzc3dvcmQgQCAxNg==','cGFzc3dvcmQgQCAxNw==','cGFzc3dvcmQgQCAxOA==','cGFzc3dvcmQgQCAxOQ==','cGFzc3dvcmQgQCAyMA==','cGFzc3dvcmQgQCAyMQ==','cGFzc3dvcmQgQCAyMg==','cGFzc3dvcmQgQCAyMw=='];
+        password = listpass[password];
+        function Login() {
+            if($('#txtpassword').val()==window.atob(password))
+            {
+                alert('Đăng nhập thành công!');
+                return true;
+            }
+            else
+            {
+                alert('Sai mật khẩu!');
+                return false;
+            }
+        }
+    </script>
+
+}

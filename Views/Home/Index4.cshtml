@@ -1,0 +1,33 @@
+@{
+    ViewData["TieuDe"] = "HELLO WORLD!";
+}
+<div>
+    <div>Tìm password lấy từ Ajax!</div>
+    <form action="/Home/Index/5">
+        <input type="password" placeholder="Nhập password!" id='txtpassword' />
+        <br />
+        <input type="submit" value="Login" onclick="return Login();" />
+    </form>
+</div>
+@section scripts {
+    <script>
+        password = '';
+        $.getJSON('/js/password.json',function(data){
+            password=data.pass;
+        });
+        
+        function Login() {
+            if($('#txtpassword').val()==password)
+            {
+                alert('Đăng nhập thành công!');
+                return true;
+            }
+            else
+            {
+                alert('Sai mật khẩu!');
+                return false;
+            }
+        }
+    </script>
+
+}
